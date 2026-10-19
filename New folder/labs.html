@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="مختبرات برمجية آمنة تعمل محليًا في المتصفح لتجربة Python وJavaScript وSQL وأدوات ترميز البيانات.">
+    <meta property="og:title" content="المختبرات التفاعلية | بيشوي سايبر سكيورتي">
+    <meta property="og:description" content="تجارب برمجية داخل المتصفح دون إرسال مدخلاتك إلى خادم الموقع.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#08110f">
+    <title>المختبرات التفاعلية | بيشوي سايبر سكيورتي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+    <script defer src="js/labs.js"></script>
+</head>
+
+<body><a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="التنقل الرئيسي"><a class="brand" href="index.html"><span
+                    class="brand-mark"><i class="fa-solid fa-terminal"></i></span><span>بيشوي
+                    <b>سايبر</b><small>SECURITY / EDUCATION</small></span></a><button class="menu-toggle"
+                aria-label="فتح القائمة" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+            <div class="nav-links"><a href="index.html">الرئيسية</a><a href="curriculum.html">المنهج</a><a
+                    href="hacking.html">الاختراق</a><a href="tools.html">الأدوات</a><a
+                    href="resources.html">المصادر</a><a class="active" href="labs.html">المختبرات</a><a
+                    href="code-snippets.html">مكتبة الأكواد</a><a href="about.html">عن الموقع</a><a class="nav-cta"
+                    href="curriculum.html">ابدأ التعلم <i class="fa-solid fa-arrow-left"></i></a></div>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="section-wrap">
+                <div class="eyebrow">BROWSER LABS / LOCAL EXECUTION</div>
+                <h1>مختبرات تفاعلية</h1>
+                <p>جرّب أمثلة تعليمية داخل متصفحك. المدخلات لا تُرسل إلى الموقع، وبعض المحركات تُحمّل عند أول استخدام.
+                </p>
+            </div>
+        </section>
+        <section class="page-content section-wrap lab-shell">
+            <div class="warning-banner lab-disclaimer" role="note"><i class="fa-solid fa-shield-halved"
+                    aria-hidden="true"></i>
+                <div>لا تضع أسرارًا أو بيانات حقيقية في المحرر. شيفرة JavaScript وHTML تعمل داخل إطار معزول، وPython
+                    وSQL يعملان محليًا في المتصفح.</div>
+            </div>
+            <div class="lab-tabs" role="tablist" aria-label="المختبرات"><button class="lab-tab" id="tab-python"
+                    role="tab" aria-selected="true" aria-controls="panel-python"
+                    data-lab-tab="python">Python</button><button class="lab-tab" id="tab-javascript" role="tab"
+                    aria-selected="false" aria-controls="panel-javascript"
+                    data-lab-tab="javascript">JavaScript</button><button class="lab-tab" id="tab-html" role="tab"
+                    aria-selected="false" aria-controls="panel-html" data-lab-tab="html">HTML / CSS</button><button
+                    class="lab-tab" id="tab-sql" role="tab" aria-selected="false" aria-controls="panel-sql"
+                    data-lab-tab="sql">SQL</button><button class="lab-tab" id="tab-hash" role="tab"
+                    aria-selected="false" aria-controls="panel-hash" data-lab-tab="hash">Hash</button><button
+                    class="lab-tab" id="tab-base64" role="tab" aria-selected="false" aria-controls="panel-base64"
+                    data-lab-tab="base64">Base64</button><button class="lab-tab" id="tab-url" role="tab"
+                    aria-selected="false" aria-controls="panel-url" data-lab-tab="url">URL</button><button
+                    class="lab-tab" id="tab-regex" role="tab" aria-selected="false" aria-controls="panel-regex"
+                    data-lab-tab="regex">Regex</button><button class="lab-tab" id="tab-jwt" role="tab"
+                    aria-selected="false" aria-controls="panel-jwt" data-lab-tab="jwt">JWT</button></div>
+            <section class="lab-panel" role="tabpanel" id="panel-python" aria-labelledby="tab-python"
+                data-lab-panel="python">
+                <h2>محرر Python</h2>
+                <p class="lab-caption">يُحمّل Pyodide عند أول تشغيل، وقد يستغرق تحميله لحظات.</p><textarea
+                    class="lab-editor" data-editor="python">def greet(name):
+    return f"مرحبًا يا {name}!"
+
+print(greet("متعلم الأمن"))</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="python">تشغيل Python <i
+                            class="fa-solid fa-play"></i></button><button class="button button-quiet"
+                        data-example="python">استعادة المثال</button></div>
+                <pre class="lab-output" data-output="python" aria-live="polite">الناتج يظهر هنا.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-javascript" aria-labelledby="tab-javascript"
+                data-lab-panel="javascript" hidden>
+                <h2>محرر JavaScript</h2>
+                <p class="lab-caption">ينفذ الكود داخل iframe معزول بسياسة تمنع طلبات الشبكة.</p><textarea
+                    class="lab-editor" data-editor="javascript">const values = [4, 8, 15, 16, 23, 42];
+console.log("عدد القيم:", values.length);
+console.log("المجموع:", values.reduce((sum, value) => sum + value, 0));</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="javascript">تشغيل JavaScript <i
+                            class="fa-solid fa-play"></i></button><button class="button button-quiet"
+                        data-example="javascript">استعادة المثال</button></div>
+                <pre class="lab-output" data-output="javascript" aria-live="polite">الناتج يظهر هنا.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-html" aria-labelledby="tab-html" data-lab-panel="html"
+                hidden>
+                <h2>معاينة HTML وCSS</h2>
+                <p class="lab-caption">المعاينة داخل إطار معزول مع تعطيل مصادر الشبكة.</p><textarea class="lab-editor"
+                    data-editor="html"><!doctype html>
+<style>body{font:18px sans-serif;padding:24px;color:#17352a}h1{color:#007a4b}</style>
+<h1>مرحبًا بالمختبر</h1>
+<p>عدّل HTML أو CSS وشاهد النتيجة مباشرة.</p></textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="html">تحديث المعاينة <i
+                            class="fa-solid fa-eye"></i></button><button class="button button-quiet"
+                        data-example="html">استعادة المثال</button></div><iframe class="lab-preview" data-preview
+                    title="معاينة HTML معزولة" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-sql" aria-labelledby="tab-sql" data-lab-panel="sql"
+                hidden>
+                <h2>محرر SQL محلي</h2>
+                <p class="lab-caption">قاعدة SQLite مؤقتة داخل الذاكرة، بجدول أمثلة اصطناعي فقط.</p><textarea
+                    class="lab-editor" data-editor="sql">SELECT name, role FROM learners ORDER BY name;</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="sql">تنفيذ الاستعلام <i
+                            class="fa-solid fa-play"></i></button><button class="button button-quiet"
+                        data-example="sql">استعادة المثال</button></div>
+                <pre class="lab-output" data-output="sql"
+                    aria-live="polite">جدول learners يحتوي بيانات تعليمية وهمية.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-hash" aria-labelledby="tab-hash" data-lab-panel="hash"
+                hidden>
+                <h2>مولّد التجزئة</h2>
+                <p class="lab-caption">تجزئة نص محلي للتعلّم؛ لا تُدخل كلمات مرور أو بيانات حساسة.</p>
+                <div class="lab-actions"><select data-hash-algorithm aria-label="خوارزمية التجزئة">
+                        <option>MD5</option>
+                        <option>SHA1</option>
+                        <option selected>SHA256</option>
+                        <option>SHA512</option>
+                    </select></div><textarea class="lab-editor" data-editor="hash">نص تجريبي</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="hash">إنشاء
+                        التجزئة</button><button class="button button-quiet" data-example="hash">استعادة المثال</button>
+                </div>
+                <pre class="lab-output" data-output="hash" aria-live="polite">التجزئة تظهر هنا.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-base64" aria-labelledby="tab-base64"
+                data-lab-panel="base64" hidden>
+                <h2>ترميز وفك Base64</h2>
+                <p class="lab-caption">Base64 ترميز وليس تشفيرًا ولا يحمي سرية البيانات.</p><textarea class="lab-editor"
+                    data-editor="base64">نص عربي تجريبي</textarea>
+                <div class="lab-actions"><button class="button button-primary"
+                        data-run="base64-encode">ترميز</button><button class="button button-quiet"
+                        data-run="base64-decode">فك الترميز</button></div>
+                <pre class="lab-output" data-output="base64" aria-live="polite">الناتج يظهر هنا.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-url" aria-labelledby="tab-url" data-lab-panel="url"
+                hidden>
+                <h2>ترميز وفك URL</h2><textarea class="lab-editor"
+                    data-editor="url">اسم=قيمة تجريبية&path=/تعلم</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="url-encode">ترميز
+                        URL</button><button class="button button-quiet" data-run="url-decode">فك الترميز</button></div>
+                <pre class="lab-output" data-output="url" aria-live="polite">الناتج يظهر هنا.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-regex" aria-labelledby="tab-regex"
+                data-lab-panel="regex" hidden>
+                <h2>مختبر Regex</h2>
+                <div class="lab-actions"><label>النمط <input class="lab-field" data-regex-pattern
+                            value="[A-Z]{2}[0-9]{3}" dir="ltr"></label><label>الخيارات <input class="lab-field"
+                            data-regex-flags value="g" dir="ltr" size="4"></label></div><textarea class="lab-editor"
+                    data-editor="regex">رمز AB123 وآخر ZX987 ضمن نص تجريبي.</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="regex">اختبار النمط</button>
+                </div>
+                <pre class="lab-output" data-output="regex" aria-live="polite">تظهر المطابقات هنا.</pre>
+            </section>
+            <section class="lab-panel" role="tabpanel" id="panel-jwt" aria-labelledby="tab-jwt" data-lab-panel="jwt"
+                hidden>
+                <h2>عارض JWT</h2>
+                <p class="lab-caption">يفك هذا العرض ترويسة وبيانات JWT محليًا فقط، ولا يتحقق من التوقيع أو الصلاحية.
+                </p><textarea class="lab-editor"
+                    data-editor="jwt">eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJkZW1vIiwicm9sZSI6InN0dWRlbnQifQ.signature</textarea>
+                <div class="lab-actions"><button class="button button-primary" data-run="jwt">فك بيانات JWT</button>
+                </div>
+                <pre class="lab-output" data-output="jwt" aria-live="polite">النتيجة تظهر هنا.</pre>
+            </section>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-main section-wrap"><a class="brand" href="index.html"><span class="brand-mark"><i
+                        class="fa-solid fa-terminal"></i></span><span>بيشوي <b>سايبر</b><small>SECURITY /
+                        EDUCATION</small></span></a>
+            <p>نتعلم لنفهم، ونختبر لنحمي.</p>
+            <div class="footer-links"><a href="contact.html">تواصل</a><a href="resources.html">مصادر</a><a
+                    href="disclaimer.html">إخلاء المسؤولية</a></div>
+        </div>
+        <div class="footer-bottom section-wrap"><span>© 2026 بيشوي سايبر سكيورتي</span><span>للتعليم والتدريب المصرح به
+                فقط.</span></div>
+    </footer>
+</body>
+
+</html>
